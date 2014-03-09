@@ -1,5 +1,5 @@
-<?php
-include ("../controller/conexion.php");
+﻿<?php
+include ("controller/conexion.php");
 $d=$_GET['d'];
 if($d!=''){
 	$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
@@ -26,7 +26,6 @@ if (mysql_fetch_row($consulta2)==0) {
 	<td>Serie</td>
 	<td>Stock</td>
 	<td>Precio</td>
-	<td>Imagen</td>
 	<td>Descripción</td>
 	<td align="center">Acción</td>
 	</tr>';
@@ -38,7 +37,6 @@ if (mysql_fetch_row($consulta2)==0) {
 		<td>'.$reg['serie'].'</td>
 		<td>'.$reg['stock'].'</td>
 		<td>'.$reg['precio'].'</td>
-		<td>'.$reg['imagen'].'</td>
 		<td>'.$reg['descripcion'].'</td>
 		<td><span class="glyphicon glyphicon-pencil" a href="#" onclick="abrirFormularioEditar('.$reg['id_celular'].');"></a></span>
 		<span class="glyphicon glyphicon-remove"a href="#" onclick="eliminar('.$reg['id_celular'].');" align="right"></a></span></td>

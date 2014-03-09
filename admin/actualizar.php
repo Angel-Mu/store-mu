@@ -9,8 +9,12 @@ include ("controller/conexion.php");
   $descripcion = $_POST['d'];
  $consulta = mysql_query("update celular set marca='$ma', modelo='$mo',serie='$s',stock='$ca',precio='$p',descripcion='$d' where id_celular='$id'");
  if($consulta){
- 	echo "Se actualizó correctamente";
+ 	?>
+ 	<div class="alert alert-success">Los datos se actualizaron correctamente</div>
+ 	<?
  }else{
- 	echo "no se actualizó correctamente";
+ 	?>
+ 	<div class="alert alert-danger">Los datos no se actualizaron correctamente</div>
+ 	<?
  }
 ?>

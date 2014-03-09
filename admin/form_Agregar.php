@@ -1,17 +1,19 @@
-<script type="text/javascript" src="../dist/ajax.js"></script>
-<form method="post" enctype="multipart/form-data" method="post">
-Marca:<input type="text" id="marca"><br>
-Modelo: <input type="text" id="modelo"><br>
-Serie: <input type="text" id="serie"><br>
-Cantidad: <input type="number" id="cantidad"><br>
-Precio: <input type="number" id="precio"><br>
-
-  <input id="archivos" type="file" name="archivos[]" multiple="multiple" onchange="seleccionado();" accept=".jpeg,.jpg,.png" />
-
-<div id="cargados">
-  <!-- Aqui van los archivos cargados -->
+<script type="text/javascript" src="ajax.js"></script>
+<form method="post">
+<div class="input-group">
+  <h3>Marca</h3>
+  <input type="text" class="form-control" id="marca"><br>
+  <h3>Modelo</h3>
+  <input type="text" class="form-control" id="modelo"><br>
+  <h3>Serie</h3>
+  <input type="text" class="form-control" id="serie"><br>
+  <h3>Cantidad</h3>
+  <input type="number" class="form-control" id="cantidad"><br>
+  <h3>Precio</h3>
+  <input type="number" class="form-control" id="precio"><br>
+  <h3>Descripción</h3>
+  <input type="text" class="form-control" id="descripcion"><br>
+  <span class="input-group-addon"></span>
 </div>
-<input type="button" onclick="seleccionado();" value="Subir" align="center"><br> 
-Descripción: <input type="text" id="descripcion"><br>
-<input type="button" onclick="insertar();" value="Registrar"> 
+<br><button type="button" class="btn btn-default" onclick="insertar();">Registrar</button>
 </form>
