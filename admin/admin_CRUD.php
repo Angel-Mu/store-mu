@@ -33,6 +33,8 @@
 <!-- NAVBAR
 ================================================== -->
   <body>
+  <div id="resultado"><h3>Bienvenido Administrador</h3></div>
+    </div>
     <div class="navbar-wrapper">
       <div class="container">
 
@@ -78,8 +80,6 @@
       <br><br><br><br>
       <a href="#" onclick="abrirFormulario();">Nuevo</a>
       <br><br>
-      <div id="resultado"><h3>Bienvenido</h3></div>
-    </div>
 
       <!-- FOOTER -->
       <footer>
