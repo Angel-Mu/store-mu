@@ -1,21 +1,30 @@
-<script type="text/javascript" src="../js/ajax.js"></script>
-<form method="post">
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript" src="ajax.js"></script>  
+</head>
+<body>
+<form action="insertar.php" method="post" enctype="multipart/form-data">
 <div class="input-group">
   <h3>Marca</h3>
-  <input type="text" class="form-control" id="marca"><br>
+  <input type="text" class="form-control" name="marca"><br>
   <h3>Modelo</h3>
-  <input type="text" class="form-control" id="modelo"><br>
+  <input type="text" class="form-control" name="modelo"><br>
   <h3>Serie</h3>
-  <input type="text" class="form-control" id="serie"><br>
+  <input type="text" class="form-control" name="serie"><br>
   <h3>Cantidad</h3>
-  <input type="number" class="form-control" id="cantidad"><br>
+  <input type="number" class="form-control" name="cantidad"><br>
   <h3>Precio</h3>
-  <input type="number" class="form-control" id="precio"><br>
+  <input type="number" class="form-control" name="precio"><br>
   <h3>Descripción</h3>
-  <input type="text" class="form-control" id="descripcion"><br>
-  <input id="archivos" type="file" name="archivos[]" accept=".jpg,.png,.jpeg, .gif" />
-  <span class="input-group-addon"></span>
-
-</div>
-<br><button id="btnSubmit" type="button" class="btn btn-default" onclick="insertar();">Registrar</button>
+  <input type="text" class="form-control" name="descripcion"><br>
+  <h3>Imagen</h3>
+  <input name="ima1" type="file" accept=".jpg,.png,.jpeg, .gif" />
+  <h3>Imagen</h3>
+  <input name="ima2" type="file" accept=".jpg,.png,.jpeg, .gif" />
+  <h3>Imagen</h3>
+  <input name="ima3" type="file" accept=".jpg,.png,.jpeg, .gif" />
+<br><input type="submit" class="btn btn-default" value="Registrar">
 </form>
+</body>
+</html>
