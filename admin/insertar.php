@@ -1,5 +1,5 @@
 <?php
- include ("controller/conexion.php");
+ include ("../controller/conexion.php");
  $consulta = mysql_query("insert into celular (marca,modelo,serie,stock,precio,descripcion) values ('$ma','$mo','$s','$ca','$p','$d')");
  for ($i=0; $i < 3; $i++) { ?>
  	<form method="post" enctype="multipart/form-data">

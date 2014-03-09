@@ -1,4 +1,4 @@
-<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="../dist/js/ajax.js"></script>
 <form method="post">
 <div class="input-group">
   <h3>Marca</h3>

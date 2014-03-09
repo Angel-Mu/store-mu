@@ -1,5 +1,5 @@
 <?php
-include ("controller/conexion.php");
+include ("../controller/conexion.php");
   $id = $_POST['id'];
   $marca = $_POST['ma'];
   $modelo = $_POST['mo'];

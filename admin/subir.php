@@ -1,5 +1,5 @@
 <?php
-include ("controller/conexion.php");
+include ("../controller/conexion.php");
 
   //Como no sabemos cuantos archivos van a llegar, iteramos la variable $_FILES
   $ruta="images/";

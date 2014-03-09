@@ -1,5 +1,5 @@
 <?php
- include ("controller/conexion.php");
+ include ("../controller/conexion.php");
  $id=$_GET['id'];
  $consulta = mysql_query("delete from celular where id_celular = '$id'");
  $consulta2= mysql_query("delete from imagen where id_celular = '$id'");

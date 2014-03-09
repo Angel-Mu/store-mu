@@ -1,6 +1,6 @@
-<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="../dist/js/ajax.js"></script>
 <?php
-include ("controller/conexion.php");
+include ("../controller/conexion.php");
 
  $id=$_GET['id'];
  $consulta=mysql_query("select * from celular where id_celular = '$id'");
