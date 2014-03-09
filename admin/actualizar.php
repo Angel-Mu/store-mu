@@ -1,5 +1,5 @@
 <?php
-include ("../controller/conexion.php");
+include ("controller/conexion.php");
  mysql_select_db("celulares",$conec);
   $id = $_POST['id'];
   $marca = $_POST['ma'];
