@@ -18,23 +18,17 @@ if (mysql_fetch_row($consulta2)==0) {
 	<tr>
 	<td>Marca</td>
 	<td>Modelo</td>
-	<td>Serie</td>
-	<td>Stock</td>
 	<td>Precio</td>
-	<td>Descripción</td>
-	<td align="center">Acción</td>
+	<td align="center" colspan=2>Acción</td>
 	</tr>';
 	while ($reg=mysql_fetch_array($consulta)) {
 		echo '
 		<tr>
 		<td>'.$reg['marca'].'</td>
 		<td>'.$reg['modelo'].'</td>
-		<td>'.$reg['serie'].'</td>
-		<td>'.$reg['stock'].'</td>
 		<td>'.$reg['precio'].'</td>
-		<td>'.$reg['descripcion'].'</td>
-		<td> <a href="#" onclick="abrirFormularioEditar('.$reg['id_celular'].');"><span class="glyphicon glyphicon-pencil"></a></span>
-		<a href="#" onclick="eliminar('.$reg['id_celular'].');" align="right"><span class="glyphicon glyphicon-remove"> </a></span></td>
+		<td><a class="btn btn-md btn-primary" href="#" onclick="mostrarDetalles('.$reg['id_celular'].');"><span class="glyphicon glyphicon-info-sign">&nbspDetalles</a></span></td>
+		<td><a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$reg['id_celular'].');"><span class="glyphicon glyphicon-shopping-cart">&nbspAgregar</a></span></td>
 		</tr>';
 	}
 	echo '</table>';
