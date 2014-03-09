@@ -12,7 +12,7 @@
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon" />
-    <title>Instalaciones Upemor</title>
+    <title>SmartphoNeate</title>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
     <!-- Custom styles for this template -->
@@ -32,24 +32,13 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">Upemor AR</a>
+              <a class="navbar-brand" href="index.php">SmartphoNeate</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><?echo "<a href='index.php?id_edificio=".$_GET['id_edificio']."'>".$id_edificio."</a></li>";?>
-                <li><a href="salones.php">Salones</a></li>
-                <li><a href="labs.php">Laboratorios</a></li>
-                <li><a href="aulasextra.php">Aulas Extra</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Departamentos<b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <?
-                      while ($rowDept=mysql_fetch_array($deptos)){ 
-                        echo "<li><a href='deptos.php?id_depto=".$rowDept['iddepartamentos']."'>".$rowDept['nombre']."</a></li>";
-                      }
-                    ?>
-                  </ul>
-                </li>
+                <li class="active"><a href="index.php">Inicio</a></li>
+                <li><a href="salones.php">Catálogo</a></li>
+                <li><a href="labs.php">Ver Carrito</a></li>
               </ul>
             </div>
           </div>
@@ -67,12 +56,12 @@
       </ol>
       <div class="carousel-inner">
         <div class="item active">
-          <img src="holder.js/900x500/auto/#777:#7a7a7a/text:First slide" alt="">
+          <img src="images/logos.jpg" style="height:100%;width:100%" alt="">
           <div class="container">
             <div class="carousel-caption">
-              <h1>Bienvenido Upemor-AR</h1>
-              <p>En este sitio te presentamos la información detallada del edificio al que haz entrado por medio de nuestra aplicación de Realidad Aumentada</p>
-              <p><a class="btn btn-lg btn-primary" href="#" onclick="javascript:alert('Proyecto de Estancia II\nÁngel Malavar, Erick Noriega, Abráham Sáyago\nIIF 7°\nAsesor: Edgardo González\nUpemor 2013')" role="button">Acerca de</a></p>
+              <h1>Bienvenido a SmartphoNeate</h1>
+              <p>En este sitio encontrarás los teléfonos más novedosos y por si fuera poco a un excelente precio. Somos la mejor opción en cuanto a equipos liberados se refiere</p>
+              <p><a class="btn btn-lg btn-primary" href="#" onclick="javascript:alert('EPII - Programación en Internet\nÁngel Malavar, Ricardo Cárdenas, Oscar Moreno\nIIF 7°\nProf: Rosario Eloisa Huerta\nUpemor 2014')" role="button">Acerca de</a></p>
             </div>
           </div>
         </div>
@@ -106,29 +95,29 @@
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
-          <img class="img-circle" src="images/logo_upemor.jpg" alt="Generic placeholder image" style="width:140px;height:140px;">
-          <h2>Upemor</h2>
-          <p>Somos una institución de educación superior comprometida con la equidad, la calidad educativa, la prevención de la contaminación y la protección del ambiente, así como la seguridad de nuestra comunidad universitaria, para la formación de profesionistas...</p>
-          <p><a class="btn btn-default" href="http://www.upemor.edu.mx" role="button" target="_blank">Página Oficial &raquo;</a></p>
+          <img class="img-circle" src="images/safe_image.png" alt="Generic placeholder image" style="width:140px;height:140px;">
+          <h2>Iphoneate</h2>
+          <p>Enterate de las noticias más recientes, reviews de apps, tweaks, etc, Recomendada si eres fan de Apple...</p>
+          <p><a class="btn btn-default" href="http://iphoneate.com/" role="button" target="_blank">Página Oficial &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="images/servesc.jpg" style="width:140px;height:140px;" alt="Generic placeholder image">
-          <h2>Sistema de Gestión Escolar</h2>
-          <p>Aquí podrás encontrar la información necesaria respecto a admisiones, inscripciones, reinscripciones, trámites, cuotas, reglamentos, entre otros.</p>
-          <p><a class="btn btn-default" href="http://sge.upemor.edu.mx/CCV/alumnos/InicioSesionAlumno.ccv" role="button" target="_blank">Acceder &raquo;</a></p>
+          <img class="img-circle" src="images/gpoAndroidLogo.png" style="width:140px;height:140px;" alt="Generic placeholder image">
+          <h2>Grupo Android</h2>
+          <p>Aquí podrás encontrar la todo lo que necesites saber acerca de Android y noticias de google, ROMS personalizadas, tutoriales y demás. Excelente sitio para los fans de Android</p>
+          <p><a class="btn btn-default" href="http://www.grupoandroid.com/page/index.html" role="button" target="_blank">Página Oficial</a></p>
         </div><!-- /.col-lg-4 -->
         <div class="col-lg-4">
-          <img class="img-circle" src="images/correo.png" style="width:140px;height:140px;" alt="Generic placeholder image">
+          <img class="img-circle" src="images/octiluslogo.png" style="width:140px;height:140px;" alt="Generic placeholder image">
           <h2>Correo</h2>
-          <p>Necesitas ir a la bandeja de entrada de tu correo institucional. Puedes hacerlo desde el siguiente enlace.</p>
-          <p><a class="btn btn-default" target="_blank" href="https://www.google.com/a/upemor.edu.mx/ServiceLogin?service=mail&passive=true&rm=false&continue=https://mail.google.com/a/upemor.edu.mx/&ss=1&ltmpl=default&ltmplcache=2" role="button">Web Mail &raquo;</a></p>
+          <p>Ya tienes tu smartphone nuevo! Personalizalo como más te guste con los accesorios más novedosos y </p>
+          <p><a class="btn btn-default" target="_blank" href="http://octilus.com.mx/" role="button">Tienda online &raquo;</a></p>
         </div><!-- /.col-lg-4 -->
       </div><!-- /.row -->
       <!-- FOOTER -->
       <hr class="featurette-divider">
       <footer>
         <p class="pull-right"><a href="">Back to top</a></p>
-        <p>&copy; 2013 Upemor &middot;</p>
+        <p>&copy; 2014 Upemor &middot;</p>
       </footer>
 
     </div><!-- /.container -->

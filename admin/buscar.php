@@ -1,5 +1,5 @@
 ﻿<?php
-include ("controller/conexion.php");
+include ("../controller/conexion.php");
 $d=$_GET['d'];
 if($d!=''){
 	$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
