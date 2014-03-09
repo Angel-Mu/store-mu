@@ -1,9 +1,5 @@
 <?php
- $host="127.0.0.1";
- $usr="root";
- $pass="root";
- $conec=mysql_connect($host,$usr,$pass);
-mysql_select_db("celulares",$conec);
+include ("../controller/conexion.php");
 $d=$_GET['d'];
 if($d!=''){
 	$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
