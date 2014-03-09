@@ -1,4 +1,4 @@
-<script type="text/javascript" src="ajax.js"></script>
+<script type="text/javascript" src="../js/ajax.js"></script>
 <form method="post">
 <div class="input-group">
   <h3>Marca</h3>
@@ -13,7 +13,9 @@
   <input type="number" class="form-control" id="precio"><br>
   <h3>Descripción</h3>
   <input type="text" class="form-control" id="descripcion"><br>
+  <input id="archivos" type="file" name="archivos[]" accept=".jpg,.png,.jpeg, .gif" />
   <span class="input-group-addon"></span>
+
 </div>
-<br><button type="button" class="btn btn-default" onclick="insertar();">Registrar</button>
+<br><button id="btnSubmit" type="button" class="btn btn-default" onclick="insertar();">Registrar</button>
 </form>
