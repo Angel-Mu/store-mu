@@ -1,6 +1,9 @@
 <?php
  include ("../controller/conexion.php");
  $consulta = mysql_query("insert into celular (marca,modelo,serie,stock,precio,descripcion) values ('$ma','$mo','$s','$ca','$p','$d')");
+ $consulta2 = mysql_query("select * from celular where serie = '".$s."'");	
+ $arrCons = mysql_fetch_array($consulta2);
+ echo $arrCons['id_celular'];
  for ($i=0; $i < 3; $i++) { ?>
  	<form method="post" enctype="multipart/form-data">
 		<div>		
