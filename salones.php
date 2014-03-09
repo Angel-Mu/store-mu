@@ -1,4 +1,6 @@
 <?
+
+    //veremos con este archivo
     session_start();
     include("controller/funciones.php");
     $_SESSION['salonId']=$_GET['salonId'];
