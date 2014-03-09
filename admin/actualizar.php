@@ -15,4 +15,5 @@
  }else{
 	echo "no se actualizó correctamente";
  }
+ //richard es bien we no se que pedo 
 ?>
