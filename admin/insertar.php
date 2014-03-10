@@ -29,6 +29,10 @@ $rutadestino3=$rutaservidor.$nombrearchivo3;
 $rutadestBD3=$rutaDB.$nombrearchivo3;
 move_uploaded_file($rutatemporal3, $rutadestino3);
 
+if ($ma==""||$mo==""||$s==""||$ca==""||$p==""||$d==""||$rutadestino1==""||$rutadestino2==""||$rutadestino3==""){
+	echo "<script>alert(\"Por favor, ingrese todos los campos.\"); window.history.back();</script>location.href=\"form_Agregar.php\";window.history.back();</script>";
+}
+
 $consulta = mysql_query("insert into celular (marca,modelo,serie,stock,precio,descripcion,imagen,imagen2,imagen3) values ('$ma','$mo','$s','$ca','$p','$d','".$rutadestBD1."','".$rutadestBD2."','".$rutadestBD3."')");
 
 if($consulta){

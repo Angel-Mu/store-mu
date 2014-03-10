@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
+    <title>Iniciar sesión</title>
+    <!-- Bootstrap core CSS -->
+    <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom styles for this template -->
+    <link href="signin.css" rel="stylesheet">
+    <style type="text/css">
+        #forma{
+            margin-top: 10%;
+        }
+    </style>
+  </head>
+  <body>
+  <div align="center" id="forma">
+    <form name="login-form" form action="sesion.php" class="login-form" action="" method="post">
+        <div class="input-group">
+            <div class="container">
+                <form class="form-signin" role="form">
+                <h2 class="form-signin-heading">Inicio de sesión</h2>
+                <input name="usuario" type="text" class="form-control" placeholder="Nickname" required>
+                <input name="clave" type="password" class="form-control" placeholder="Contraseña" required>
+                <button class="btn btn-lg btn-primary btn-block" type="submit">Iniciar sesión</button>
+            </div> <!-- /container --> 
+        </div> 
+    </form>
+  </div>  
+  </body>
+</html>
