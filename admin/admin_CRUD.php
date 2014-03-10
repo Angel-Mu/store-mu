@@ -58,7 +58,7 @@ if (verificar_usuario()){?>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="salir.php">Cerrar Sesión</a></li>
-                <li class="active"><a href="reporte_existencias.php">Reportes</a></li>
+                <li class="active"><a href="reporte_fpdf.php">Reportes</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">

@@ -8,7 +8,7 @@ header("Content-Type: text/html;charset=utf-8");
 
 
 	#$queEmp = "SELECT id_entrada, Nombre, entradas.cantidad, entradas.fecha_alta from catalogo inner join items on (catalogo.id_prod=items.id_prod) inner join entradas on (items.id_item=entradas.id_item);";
-	$queEmp = "select id_celular,marca, modelo, serie, stock, precio, descripcion from celular where stock < 17";
+	$queEmp = "select id_celular,marca, modelo, serie, stock, precio, descripcion from celular where stock < 15";
 	mysql_query("SET NAMES 'utf8'");
 	$resEmp = mysql_query($queEmp) or die(mysql_error());
 	$totEmp = mysql_num_rows($resEmp);
