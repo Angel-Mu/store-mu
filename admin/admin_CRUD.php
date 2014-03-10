@@ -1,4 +1,9 @@
 <!DOCTYPE html>
+<?
+include('funciones.php');
+//uso de la funcion verificar_usuario()
+if (verificar_usuario()){?>
+
 <html lang="en">
   <head>
     <script type="text/javascript" src="../js/ajax.js"></script>
@@ -48,11 +53,11 @@
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="index.php">SmartphoNeate</a>
+              <a class="navbar-brand">SmartphoNeate</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="index.php">Cerrar Sesión</a></li>
+                <li class="active"><a href="salir.php">Cerrar Sesión</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -93,3 +98,10 @@
     <script src="../../dist/js/bootstrap.min.js"></script>
   </body>
 </html>
+<?    
+} else {
+  //si el usuario no es verificado volvera al formulario de ingreso
+  ?><head><meta charset="utf-8"><?
+  echo "<script>alert(\"Por favor inicie su sesión.\"); location.href=\"../index.php\";</script>";
+}
+?>
