@@ -1,6 +1,6 @@
 ﻿<?
 	include ("controller/conexion.php");
-	$d=$_GET['d'];
+	$id=$_GET['id'];
 	$query="select * from celular  where id_celular='$id'";
 	$celTable=mysql_query($query);
 	$datosCel=mysql_fetch_array($celTable);
