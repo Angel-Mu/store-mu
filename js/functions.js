@@ -43,6 +43,18 @@ function mostrarDetalles(id){
 	ajax.send(null);
 }
 
+function detallesCat(id){
+	c = document.getElementById('resultado');
+	ajax = crearAjax();
+	ajax.open("GET","showDetail.php?id="+id);
+	ajax.onreadystatechange=function(){
+		if(ajax.readyState==4){
+			c.innerHTML=ajax.responseText;
+		}
+	}
+	ajax.send(null);
+}
+
 function abrirFormulario(){
 	c = document.getElementById('resultado');
 	ajax = crearAjax();
@@ -54,7 +66,6 @@ function abrirFormulario(){
 	}
 	ajax.send(null);
 }
-
 
 function insertar(){
 	

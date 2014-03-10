@@ -54,7 +54,7 @@ include ("controller/conexion.php");
 	<div class="col-xs-2">		
 	</div>
 	<div class="col-xs-8">
-		<a class="btn btn-md btn-primary" href="#" onclick="mostrarDetalles('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-info-sign">&nbspDetalles</span></a>
-		<a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-shopping-cart">&nbspAgregar</span></a>
+		<a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-shopping-cart">&nbsp;Agregar</span></a>
+		<a class="btn btn-md btn-primary" href="#" onclick="comprar('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-usd">&nbsp;Comprar</span></a>
 	</div>
 </div>
