@@ -83,7 +83,6 @@ function agregarCarrito(id){
 	total=document.getElementById('total').value;
 	cant=document.getElementById('cant').value;
 	c = document.getElementById('resultado');
-	alert(id);
 	ajax = crearAjax();
 	ajax.open("POST","addToCart.php?id_celular="+id+"&tot="+total+"&cant="+cant);
 	ajax.onreadystatechange=function(){

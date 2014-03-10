@@ -5,9 +5,6 @@
     $car=mysql_fetch_array($consCarrito);
     $newCar=$car['id_carrito']+1;
     setcookie("carroCompra", $newCar, time()+3600);
-    $_SESSION['carrito'] = $newCar; 
-
-    echo "<script>alert(".$_COOKIE['carroCompra'].");</script>";
 ?>
 <!DOCTYPE html>
 <html lang="en">
