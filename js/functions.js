@@ -28,7 +28,17 @@ function buscar(){
 	}
 	ajax.send(null);
 }
-
+function delItem(contador){
+	c = document.getElementById('resultado');
+	ajax = crearAjax();
+	ajax.open("GET","removeItem.php?cont="+contador);
+	ajax.onreadystatechange=function(){
+		if(ajax.readyState==4){
+			c.innerHTML=ajax.responseText;
+		}
+	}
+	ajax.send(null);
+}
 function mostrarDetalles(id){
 	c = document.getElementById('resultado');
 	document.getElementById('myCarousel').style.display="none";

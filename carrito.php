@@ -92,7 +92,7 @@
                     <td>'.$list['cantidad'].'</td>
                     <td>'.$list['precio'].'</td>
                     <td>'.$list['total'].'</td>
-                    <td><a class="btn btn-md btn-primary" href="#" onclick="delItem('.$reg['contador'].');"><span class="glyphicon glyphicon-remove">&nbspQuitar</a></span></td>
+                    <td><a class="btn btn-md btn-primary" href="#" onclick="delItem('.$list['contador'].');"><span class="glyphicon glyphicon-remove">&nbspQuitar</a></span></td>
                     </tr>';
                 }
                   echo '</table>';
