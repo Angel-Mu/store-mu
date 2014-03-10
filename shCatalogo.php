@@ -1,5 +1,6 @@
 ﻿<?php
 	include ("controller/conexion.php");
+	$d=$_GET['d'];
 	$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
 	echo '
 	<table class="table table-bordered">

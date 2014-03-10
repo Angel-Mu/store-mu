@@ -41,7 +41,7 @@
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
-                  <input type="text" placeholder="Buscar..." class="form-control">
+                  <input type="text" id="buscador" placeholder="Buscar..." class="form-control" onkeyup="buscar();">
                 </div>
                 <div class="form-group">
                   <select name="filtro" id="filtro" class="form-control" placeholder="Filtro de busqueda">
@@ -49,7 +49,7 @@
                   <option value="modelo">Modelo</option>
                 </select>
                 </div>
-                <button type="submit" class="btn btn-success"><span class="glyphicon glyphicon-search"></span>&nbspBuscar</button>                
+                <a href="#" class="btn btn-md btn-primary" onclick="buscar();"><span class="glyphicon glyphicon-search"></span></a></button>                
               </form>
             </div>
           </div>
