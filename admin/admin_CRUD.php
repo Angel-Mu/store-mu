@@ -43,42 +43,38 @@
           <div class="container">
             <div class="navbar-header">
               <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-                <span class="sr-only">Barra de navegación</span>
+                <span class="sr-only">Toggle navigation</span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
                 <span class="icon-bar"></span>
               </button>
-              <a class="navbar-brand" href="#">CellManía</a>
+              <a class="navbar-brand" href="index.php">SmartphoNeate</a>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="#">Inicio</a></li>
-                <li><a href="#about">CRUD</a></li>
-                <li><a href="#contact">Contact</a></li>
-                <li class="dropdown">
-                  <a href="#" class="dropdown-toggle" data-toggle="dropdown">Dropdown <b class="caret"></b></a>
-                  <ul class="dropdown-menu">
-                    <li><a href="#">Action</a></li>
-                    <li><a href="#">Another action</a></li>
-                    <li><a href="#">Something else here</a></li>
-                    <li class="divider"></li>
-                    <li class="dropdown-header">Nav header</li>
-                    <li><a href="#">Separated link</a></li>
-                    <li><a href="#">One more separated link</a></li>
-                  </ul>
-                </li>
+                <li class="active"><a href="index.php">Inicio</a></li>
+                <li><a href="catalogo.php">Catálogo</a></li>
+                <li><a href="labs.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbspVer Carrito</a></li>
               </ul>
+              <form class="navbar-form navbar-right">
+                <div class="form-group">
+                  <input type="text" id="buscador" placeholder="Buscar..." class="form-control" onkeyup="buscar();">
+                </div>
+                <div class="form-group">
+                  <select name="filtro" id="filtro" class="form-control" placeholder="Filtro de busqueda">
+                  <option value="marca">Marca</option>
+                  <option value="modelo">Modelo</option>
+                </select>
+                </div>
+                <a href="#" class="btn btn-md btn-primary" onclick="buscar();"><span class="glyphicon glyphicon-search"></span></a></button>                
+              </form>
             </div>
           </div>
         </div>
-
       </div>
     </div>
     <div id="tabla" align="center">
     <div id="resultado"><h3>Bienvenido Administrador</h3></div>
-      <br><br><br><br>
-      <input type="text" id="buscador" onkeyup="buscar();">
-      <a href="#" onclick="buscar();">Buscar</a>
       <br><br><br><br>
       <a href="#" onclick="abrirFormulario();">Nuevo</a>
       <br><br>
