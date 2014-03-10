@@ -1,3 +1,8 @@
+<?php
+header("Content-Type: text/html;charset=utf-8");
+include('funciones.php');
+//uso de la funcion verificar_usuario()
+if (verificar_usuario()){?>
 <!DOCTYPE html>
 <html>
 <head>
@@ -28,3 +33,10 @@
 </form>
 </body>
 </html>
+<?
+} else {
+  //si el usuario no es verificado volvera al formulario de ingreso
+  ?><head><meta charset="utf-8"><?
+  echo "<script>alert(\"Por favor inicie su sesión.\"); location.href=\"../index.php\";</script>";
+}
+?>

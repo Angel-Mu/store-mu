@@ -1,41 +1,50 @@
-﻿<?php
-include ("../controller/conexion.php");
-$d=$_GET['d'];
-$filtro=$_GET['e'];
-if($e=="marca"){
-	$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
-	$consulta2= mysql_query("SELECT * FROM celular where marca like '$d%'");
-}else{
-	$consulta = mysql_query("SELECT * FROM celular where modelo like '$d%'");
-	$consulta2= mysql_query("SELECT * FROM celular where modelo like '$d%'");
-}
-if (mysql_fetch_row($consulta2)==0) {
-	echo "<div class='alert alert-danger'>Sin resultados de busqueda</div>";
-}else{
-	echo '
-	<table class="table table-bordered">
-	<tr>
-	<td>Marca</td>
-	<td>Modelo</td>
-	<td>Serie</td>
-	<td>Stock</td>
-	<td>Precio</td>
-	<td>Descripción</td>
-	<td align="center">Acción</td>
-	</tr>';
-	while ($reg=mysql_fetch_array($consulta)) {
-		echo '
-		<tr>
-		<td>'.$reg['marca'].'</td>
-		<td>'.$reg['modelo'].'</td>
-		<td>'.$reg['serie'].'</td>
-		<td>'.$reg['stock'].'</td>
-		<td>'.$reg['precio'].'</td>
-		<td>'.$reg['descripcion'].'</td>
-		<td><span class="glyphicon glyphicon-pencil" a href="#" onclick="abrirFormularioEditar('.$reg['id_celular'].');"></a></span>
-		<span class="glyphicon glyphicon-remove"a href="#" onclick="eliminar('.$reg['id_celular'].');" align="right"></a></span></td>
-		</tr>';
+﻿<?
+header("Content-Type: text/html;charset=utf-8");
+include('funciones.php');
+//uso de la funcion verificar_usuario()
+if (verificar_usuario()){
+	include ("../controller/conexion.php");
+	$d=$_GET['d'];
+	$filtro=$_GET['e'];
+	if($e=="marca"){
+		$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
+		$consulta2= mysql_query("SELECT * FROM celular where marca like '$d%'");
+	}else{
+		$consulta = mysql_query("SELECT * FROM celular where modelo like '$d%'");
+		$consulta2= mysql_query("SELECT * FROM celular where modelo like '$d%'");
 	}
-	echo '</table>';
+	if (mysql_fetch_row($consulta2)==0) {
+		echo "<div class='alert alert-danger'>Sin resultados de busqueda</div>";
+	}else{
+		echo '
+		<table class="table table-bordered">
+		<tr>
+		<td>Marca</td>
+		<td>Modelo</td>
+		<td>Serie</td>
+		<td>Stock</td>
+		<td>Precio</td>
+		<td>Descripción</td>
+		<td align="center">Acción</td>
+		</tr>';
+		while ($reg=mysql_fetch_array($consulta)) {
+			echo '
+			<tr>
+			<td>'.$reg['marca'].'</td>
+			<td>'.$reg['modelo'].'</td>
+			<td>'.$reg['serie'].'</td>
+			<td>'.$reg['stock'].'</td>
+			<td>'.$reg['precio'].'</td>
+			<td>'.$reg['descripcion'].'</td>
+			<td><span class="glyphicon glyphicon-pencil" a href="#" onclick="abrirFormularioEditar('.$reg['id_celular'].');"></a></span>
+			<span class="glyphicon glyphicon-remove"a href="#" onclick="eliminar('.$reg['id_celular'].');" align="right"></a></span></td>
+			</tr>';
+		}
+		echo '</table>';
+	}
+} else {
+  //si el usuario no es verificado volvera al formulario de ingreso
+  ?><head><meta charset="utf-8"><?
+  echo "<script>alert(\"Por favor inicie su sesión.\"); location.href=\"../index.php\";</script>";
 }
 ?>
