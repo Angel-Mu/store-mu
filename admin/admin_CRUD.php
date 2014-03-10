@@ -1,9 +1,9 @@
-<!DOCTYPE html>
 <?
+header("Content-Type: text/html;charset=utf-8");
 include('funciones.php');
 //uso de la funcion verificar_usuario()
 if (verificar_usuario()){?>
-
+<!DOCTYPE html>
 <html lang="en">
   <head>
     <script type="text/javascript" src="../js/ajax.js"></script>
