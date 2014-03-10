@@ -78,15 +78,14 @@ function abrirFormulario(){
 	}
 	ajax.send(null);
 }
-function nada()	{
-	alert("XXXXXXXX");
-}
 
 function agregarCarrito(id,cant,total){
 	if(cant==0 && total==0){
 		total=document.getElementById('total').value;
 		cant=document.getElementById('cant').value;
+		alert(cant+" "+total);
 	}
+	
 	c = document.getElementById('resultado');
 	ajax = crearAjax();
 	ajax.open("POST","addToCart.php?id_celular="+id+"&tot="+total+"&cant="+cant);
