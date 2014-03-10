@@ -1,23 +1,17 @@
 ﻿<?php
 include ("../controller/conexion.php");
 $d=$_GET['d'];
-if($d!=''){
+$filtro=$_GET['e'];
+if($filtro=="marca"){
 	$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
+	$consulta2= mysql_query("SELECT * FROM celular where marca like '$d%'");
 }else{
-	$consulta = mysql_query("SELECT * FROM celular");
-}
-
-
-$d=$_GET['d'];
-if($d!=''){
-	$consulta2 = mysql_query("SELECT * FROM celular where marca like '$d%'");
-}else{
-	$consulta2 = mysql_query("SELECT * FROM celular");
+	$consulta = mysql_query("SELECT * FROM celular where modelo like '$d%'");
+	$consulta2= mysql_query("SELECT * FROM celular where modelo like '$d%'");
 }
 if (mysql_fetch_row($consulta2)==0) {
-	echo 'no hay celulares ingresados';
+	echo "<div class='alert alert-danger'>Sin resultados de busqueda</div>";
 }else{
-
 	echo '
 	<table class="table table-bordered">
 	<tr>

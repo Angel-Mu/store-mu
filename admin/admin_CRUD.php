@@ -54,11 +54,10 @@
               <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Inicio</a></li>
                 <li><a href="catalogo.php">Catálogo</a></li>
-                <li><a href="labs.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbspVer Carrito</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
-                  <input type="text" id="buscador" placeholder="Buscar..." class="form-control" onkeyup="buscar();">
+                  <input type="text" id="buscador" placeholder="Buscar..." class="form-control" onkeyup="buscar_admin();">
                 </div>
                 <div class="form-group">
                   <select name="filtro" id="filtro" class="form-control" placeholder="Filtro de busqueda">
@@ -66,7 +65,7 @@
                   <option value="modelo">Modelo</option>
                 </select>
                 </div>
-                <a href="#" class="btn btn-md btn-primary" onclick="buscar();"><span class="glyphicon glyphicon-search"></span></a></button>                
+                <a href="#" class="btn btn-md btn-primary" onclick="buscar_admin();"><span class="glyphicon glyphicon-search"></span></a></button>                
               </form>
             </div>
           </div>

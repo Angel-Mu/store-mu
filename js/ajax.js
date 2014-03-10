@@ -28,6 +28,19 @@ function buscar(){
 	ajax.send(null);
 }
 
+function buscar_admin(){
+	d = document.getElementById('buscador').value;
+	c = document.getElementById('resultado');
+	ajax = crearAjax();
+	ajax.open("GET","../admin/buscar.php?d="+d);
+	ajax.onreadystatechange=function(){
+		if(ajax.readyState==4){
+			c.innerHTML=ajax.responseText;
+		}
+	}
+	ajax.send(null);
+}
+
 function abrirFormulario(){
 	c = document.getElementById('resultado');
 	ajax = crearAjax();
