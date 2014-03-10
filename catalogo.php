@@ -84,7 +84,7 @@
               <td>'.$reg['modelo'].'</td>
               <td>'.$reg['precio'].'</td>
               <td><a class="btn btn-md btn-primary" href="#" onclick="detallesCat('.$reg['id_celular'].');"><span class="glyphicon glyphicon-info-sign">&nbspDetalles</a></span></td>
-              <td><a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$reg['id_celular'].');"><span class="glyphicon glyphicon-shopping-cart">&nbspAgregar</a></span></td>
+              <td><a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$reg['id_celular'].',1,'.$reg['precio'].');"><span class="glyphicon glyphicon-shopping-cart">&nbspAgregar</a></span></td>
               </tr>';
             }
             echo '</table>';

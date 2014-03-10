@@ -68,10 +68,11 @@
         </div>
         <div class="col-lg-8">
           <?
-              $consulta = mysql_query("SELECT * FROM carrito inner join celular on celular.id_celular=carrito.id_celular where id_carrito=".$_COOKIE['carroCompra']);
-              $cons = mysql_query("SELECT * FROM carrito inner join celular on celular.id_celular=carrito.id_celular where id_carrito=".$_COOKIE['carroCompra']);
-              $lst = mysql_affected_rows();
-              if($lst!=0) {
+              if($_COOKIE['carroCompra']!=null){
+                $consulta = mysql_query("SELECT * FROM carrito inner join celular on celular.id_celular=carrito.id_celular where id_carrito=".$_COOKIE['carroCompra']);
+                $cons = mysql_query("SELECT * FROM carrito inner join celular on celular.id_celular=carrito.id_celular where id_carrito=".$_COOKIE['carroCompra']);
+                $lst = mysql_affected_rows();
+                if($lst!=0) {
                 echo '
                 <table class="table table-bordered">
                 <tr>
@@ -99,8 +100,14 @@
                   echo '<a class="btn btn-md btn-primary" href="#" onclick="comprar('.$list['id_carrito'].');"><span class="glyphicon glyphicon-usd">&nbspComprar</span></a>';
                   echo '<a class="btn btn-md btn-primary" href="#" onclick="vaciar('.$list['id_carrito'].');"><span class="glyphicon glyphicon-trash">&nbspVaciar</span></a>';
                 }else{
-                  echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>No hay elementos en el carrito</strong> Puede ser que haya expirado su carrito o que no haya cargado ningún artículo</div>";;
+                  echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>No hay elementos en el carrito</strong> Puede ser que haya expirado su carrito o que no haya cargado ningún artículo</div>";
                 }
+              }else{
+                 echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>No hay elementos en el carrito</strong> Puede ser que haya expirado su carrito o que no haya cargado ningún artículo</div>";
+              }
+              
+              
+              
              ?>
       </div><!-- /.row -->
       <div class="col-lg-2"></div>

@@ -61,7 +61,7 @@
           <input type="number" id="total" disabled='disabled' class="form-control">
         </div>
       	<? 
-      		echo "<a class='btn btn-md btn-primary' href='#' onclick='agregarCarrito(".$datosCel['id_celular'].");'><span class='glyphicon glyphicon-shopping-cart'>&nbsp;Agregar</span></a>
+      		echo "<a class='btn btn-md btn-primary' href='#' onclick='agregarCarrito(".$datosCel['id_celular'].",document.getElementById('cant').value,document.getElementById('total').value);'><span class='glyphicon glyphicon-shopping-cart'>&nbsp;Agregar</span></a>
       		<a class='btn btn-md btn-primary' href='#' onclick='comprar(".$datosCel['id_celular'].");'><span class='glyphicon glyphicon-usd'>&nbsp;Comprar</span></a>";
 		?>
 	</div>
