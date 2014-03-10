@@ -50,3 +50,11 @@ include ("controller/conexion.php");
 		?>
 	</div>
 </div>
+<div class="row">
+	<div class="col-xs-2">		
+	</div>
+	<div class="col-xs-8">
+		<a class="btn btn-md btn-primary" href="#" onclick="mostrarDetalles('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-info-sign">&nbspDetalles</span></a>
+		<a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-shopping-cart">&nbspAgrega</span></a>
+	</div>
+</div>

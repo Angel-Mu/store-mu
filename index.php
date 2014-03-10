@@ -1,7 +1,6 @@
 <?
     session_start();
-    include("controller/funciones.php");
-    $_SESSION['id_edificio']=$_GET['id_edificio'];
+    include("controller/conexion.php");
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -15,9 +14,13 @@
     <title>SmartphoNeate</title>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
+    <script type="text/javascript" src="dist/js/jquery-1.10.2.min.js"></script>
+    <script type="text/javascript" src="dist/js/modernizr.custom.js"></script>
+    <script type="text/javascript" src="dist/js/lightbox-2.6.min.js"></script>
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
     <script src="js/functions.js"></script>
+    
   </head>
 <!-- NAVBAR
 ================================================== -->
@@ -76,25 +79,20 @@
             </div>
           </div>
         </div>
-        <div class="item">
-          <img src="images/upemor.jpg" style="height:125%;width:80%" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1><?$data_edif=mysql_fetch_array($edif); echo $data_edif['nombre'];?></h1>
-              <p><?echo $data_edif['informacion'];?></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="images/google-map-logo.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Upemor</h1>
-              <p>Boulevard Cuauhnáhuac 566, Col. Lomas del Texcal, Jiutepec, Morelos. CP 62550</p>
-              <p><a class="btn btn-lg btn-primary" href="map.php" role="button">Ver mapa</a></p>
-            </div>
-          </div>
-        </div>
+        <?
+          $con=mysql_query("select * from celular order by id_celular DESC;");
+          $res=mysql_fetch_array($con);
+          for($i=0;$i<3;$i++){
+            echo "<div class='item'>
+              <img src='".$res['imagen']."' style='height:125%;width:80%'>
+              <div class='container'>
+                <div class='carousel-caption'>
+                  <p><a class='btn btn-lg btn-primary' href='#' onclick='mostrarDetalles(".$res['id_celular'].")'></a></p>
+                </div>
+              </div>
+            </div>"; 
+          }     
+        ?>
       </div>
       <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
       <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
@@ -103,7 +101,7 @@
     ================================================== -->
     <div id="resultado"><h3 style="display:none;">Resultados de Busqueda</h3></div>
     <!-- Wrap the rest of the page in another container to center all the content. -->
-    <div class="container marketing">
+    <div id="patrocinadores" class="container marketing">
       <!-- Three columns of text below the carousel -->
       <div class="row">
         <div class="col-lg-4">
