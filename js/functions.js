@@ -83,7 +83,6 @@ function agregarCarrito(id,cant,total){
 	if(cant==0 && total==0){
 		total=document.getElementById('total').value;
 		cant=document.getElementById('cant').value;
-		alert(cant+" "+total);
 	}
 	
 	c = document.getElementById('resultado');
