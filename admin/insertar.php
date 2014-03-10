@@ -31,8 +31,8 @@ if (verificar_usuario()){
 	$rutadestBD3=$rutaDB.$nombrearchivo3;
 	move_uploaded_file($rutatemporal3, $rutadestino3);
 
-	if ($ma==""||$mo==""||$s==""||$ca==""||$p==""||$d==""||$rutadestino1==""||$rutadestino2==""||$rutadestino3==""){
-		echo "<script>alert(\"Por favor, ingrese todos los campos.\"); window.history.back();</script>location.href=\"form_Agregar.php\";window.history.back();</script>";
+	if ($ma==""||$mo==""||$s==""||$ca==""||$p==""||$d==""||$rutadestino1=="../images/"||$rutadestino2=="../images/"||$rutadestino3=="../images/"){
+		echo "<script>alert(\"Por favor, ingrese todos los campos.\"); location.href=\"admin_CRUD.php\";</script>";
 	}
 	$consulta = mysql_query("insert into celular (marca,modelo,serie,stock,precio,descripcion,imagen,imagen2,imagen3) values ('$ma','$mo','$s','$ca','$p','$d','".$rutadestBD1."','".$rutadestBD2."','".$rutadestBD3."')");
 	if($consulta){
