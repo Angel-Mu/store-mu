@@ -2,7 +2,7 @@
 include ("../controller/conexion.php");
 $d=$_GET['d'];
 $filtro=$_GET['e'];
-if($filtro=="marca"){
+if($e=="marca"){
 	$consulta = mysql_query("SELECT * FROM celular where marca like '$d%'");
 	$consulta2= mysql_query("SELECT * FROM celular where marca like '$d%'");
 }else{

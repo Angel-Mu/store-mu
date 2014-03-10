@@ -14,9 +14,6 @@
     <title>SmartphoNeate</title>
     <!-- Bootstrap core CSS -->
     <link href="dist/css/bootstrap.css" rel="stylesheet">
-    <script type="text/javascript" src="dist/js/jquery-1.10.2.min.js"></script>
-    <script type="text/javascript" src="dist/js/modernizr.custom.js"></script>
-    <script type="text/javascript" src="dist/js/lightbox-2.6.min.js"></script>
     <!-- Custom styles for this template -->
     <link href="carousel.css" rel="stylesheet">
     <script src="js/functions.js"></script>
@@ -41,6 +38,8 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li class="active"><a href="index.php">Inicio</a></li>
+                <li><a href="catalogo.php">Catálogo</a></li>
+                <li><a href="carito.php"><span class="glyphicon glyphicon-shopping-cart">&nbspVer Carrito</span></a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -81,16 +80,20 @@
         </div>
         <?
           $con=mysql_query("select * from celular order by id_celular DESC;");
-          $res=mysql_fetch_array($con);
-          for($i=0;$i<3;$i++){
+          $i=0;
+          while ($res=mysql_fetch_array($con)){
+            $i++;
             echo "<div class='item'>
               <img src='".$res['imagen']."' style='height:125%;width:80%'>
               <div class='container'>
                 <div class='carousel-caption'>
-                  <p><a class='btn btn-lg btn-primary' href='#' onclick='mostrarDetalles(".$res['id_celular'].")'></a></p>
+                  <p><a class='btn btn-lg btn-primary' href='#' onclick='mostrarDetalles(".$res['id_celular'].")'>Ver Detalles</a></p>
                 </div>
               </div>
-            </div>"; 
+            </div>";
+            if($i>2){
+              break;
+            }
           }     
         ?>
       </div>

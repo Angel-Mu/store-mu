@@ -38,7 +38,7 @@
               <ul class="nav navbar-nav">
                 <li><a href="index.php">Inicio</a></li>
                 <li class="active"><a href="catalogo.php">Catálogo</a></li>
-                <li><a href="labs.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbspVer Carrito</a></li>
+                <li><a href="carrito.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbspVer Carrito</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -57,49 +57,6 @@
         </div>
       </div>
     </div>
-    <!-- Carousel
-    ================================================== -->
-    <div id="myCarousel" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators">
-        <li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-        <li data-target="#myCarousel" data-slide-to="1"></li>
-        <li data-target="#myCarousel" data-slide-to="2"></li>
-      </ol>
-      <div class="carousel-inner">
-        <div class="item active">
-          <img src="images/logos.jpg" style="height:100%;width:100%" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1 style="color:black;">Bienvenido a SmartphoNeate</h1>
-              <p style="color:black;">En este sitio encontrarás los teléfonos más novedosos y por si fuera poco a un excelente precio. Somos la mejor opción en cuanto a equipos liberados se refiere</p>
-              <p><a class="btn btn-lg btn-primary" href="#" onclick="javascript:alert('EPII - Programación en Internet\nÁngel Malavar, Ricardo Cárdenas, Oscar Moreno\nIIF 7°\nProf: Rosario Eloisa Huerta\nUpemor 2014')" role="button">Acerca de</a></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="images/upemor.jpg" style="height:125%;width:80%" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1><?$data_edif=mysql_fetch_array($edif); echo $data_edif['nombre'];?></h1>
-              <p><?echo $data_edif['informacion'];?></p>
-            </div>
-          </div>
-        </div>
-        <div class="item">
-          <img src="images/google-map-logo.jpg" alt="">
-          <div class="container">
-            <div class="carousel-caption">
-              <h1>Upemor</h1>
-              <p>Boulevard Cuauhnáhuac 566, Col. Lomas del Texcal, Jiutepec, Morelos. CP 62550</p>
-              <p><a class="btn btn-lg btn-primary" href="map.php" role="button">Ver mapa</a></p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <a class="left carousel-control" href="#myCarousel" data-slide="prev"><span class="glyphicon glyphicon-chevron-left"></span></a>
-      <a class="right carousel-control" href="#myCarousel" data-slide="next"><span class="glyphicon glyphicon-chevron-right"></span></a>
-    </div><!-- /.carousel -->
     <!-- Marketing messaging and featurettes
     ================================================== -->
     <!-- Wrap the rest of the page in another container to center all the content. -->
