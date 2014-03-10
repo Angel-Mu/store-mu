@@ -36,8 +36,8 @@
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
                 <li><a href="index.php">Inicio</a></li>
-                <li class="active"><a href="catalogo.php">Catálogo</a></li>
-                <li><a href="carrito.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbspVer Carrito</a></li>
+                <li><a href="catalogo.php">Catálogo</a></li>
+                <li class="active"><a href="carrito.php"><span class="glyphicon glyphicon-shopping-cart"></span>&nbspVer Carrito</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -68,27 +68,40 @@
         </div>
         <div class="col-lg-8">
           <?
-            $consulta = mysql_query("SELECT * FROM celular order by id_celular DESC;");
-            echo '
-            <table class="table table-bordered">
-            <tr>
-            <td>Marca</td>
-            <td>Modelo</td>
-            <td>Precio</td>
-            <td align="center" colspan=2>Acción</td>
-            </tr>';
-            while ($reg=mysql_fetch_array($consulta)) {
-              echo '
-              <tr>
-              <td>'.$reg['marca'].'</td>
-              <td>'.$reg['modelo'].'</td>
-              <td>'.$reg['precio'].'</td>
-              <td><a class="btn btn-md btn-primary" href="#" onclick="detallesCat('.$reg['id_celular'].');"><span class="glyphicon glyphicon-info-sign">&nbspDetalles</a></span></td>
-              <td><a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$reg['id_celular'].');"><span class="glyphicon glyphicon-shopping-cart">&nbspAgregar</a></span></td>
-              </tr>';
-            }
-            echo '</table>';
-          ?>
+              $consulta = mysql_query("SELECT * FROM carrito inner join celular on celular.id_celular=carrito.id_celular where id_carrito=".$_COOKIE['carroCompra']);
+              $cons = mysql_query("SELECT * FROM carrito inner join celular on celular.id_celular=carrito.id_celular where id_carrito=".$_COOKIE['carroCompra']);
+              $lst = mysql_affected_rows();
+              if($lst!=0) {
+                echo '
+                <table class="table table-bordered">
+                <tr>
+                <td>Foto</td>
+                <td>Marca</td>
+                <td>Modelo</td>
+                <td>Cantidad</td>
+                <td>Precio</td>
+                <td>Total</td>
+                <td>Acción</td>
+                </tr>';
+                while ($list=mysql_fetch_array($consulta)) {
+                  echo '
+                    <tr>
+                    <td><img src='.$list['imagen'].' style="width:80px;height:80px;"></td>
+                    <td>'.$list['marca'].'</td>
+                    <td>'.$list['modelo'].'</td>
+                    <td>'.$list['cantidad'].'</td>
+                    <td>'.$list['precio'].'</td>
+                    <td>'.$list['total'].'</td>
+                    <td><a class="btn btn-md btn-primary" href="#" onclick="delItem('.$reg['contador'].');"><span class="glyphicon glyphicon-remove">&nbspQuitar</a></span></td>
+                    </tr>';
+                }
+                  echo '</table>';
+                  echo '<a class="btn btn-md btn-primary" href="#" onclick="comprar('.$list['id_carrito'].');"><span class="glyphicon glyphicon-usd">&nbspComprar</span></a>';
+                  echo '<a class="btn btn-md btn-primary" href="#" onclick="vaciar('.$list['id_carrito'].');"><span class="glyphicon glyphicon-trash">&nbspVaciar</span></a>';
+                }else{
+                  echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>No hay elementos en el carrito</strong> Puede ser que haya expirado su carrito o que no haya cargado ningún artículo</div>";;
+                }
+             ?>
       </div><!-- /.row -->
       <div class="col-lg-2"></div>
       <!-- FOOTER -->

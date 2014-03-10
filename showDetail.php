@@ -1,5 +1,5 @@
 ﻿<?
-include ("controller/conexion.php");
+	include ("controller/conexion.php");
 	$d=$_GET['d'];
 	$query="select * from celular  where id_celular='$id'";
 	$celTable=mysql_query($query);
@@ -54,7 +54,15 @@ include ("controller/conexion.php");
 	<div class="col-xs-2">		
 	</div>
 	<div class="col-xs-8">
-		<a class="btn btn-md btn-primary" href="#" onclick="agregarCarrito('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-shopping-cart">&nbsp;Agregar</span></a>
-		<a class="btn btn-md btn-primary" href="#" onclick="comprar('.$datosCel['id_celular'].');"><span class="glyphicon glyphicon-usd">&nbsp;Comprar</span></a>
+        <div class="form-group">
+          <input type="number" id="cant" placeholder="Cantidad..." class="form-control" onkeyup="calcular(this.value,<? echo $datosCel['precio'];?>);" onchange="calcular(this.value,<? echo $datosCel['precio'];?>);">
+        </div>
+        <div class="form-group">
+          <input type="number" id="total" disabled='disabled' class="form-control">
+        </div>
+      	<? 
+      		echo "<a class='btn btn-md btn-primary' href='#' onclick='agregarCarrito(".$datosCel['id_celular'].");'><span class='glyphicon glyphicon-shopping-cart'>&nbsp;Agregar</span></a>
+      		<a class='btn btn-md btn-primary' href='#' onclick='comprar(".$datosCel['id_celular'].");'><span class='glyphicon glyphicon-usd'>&nbsp;Comprar</span></a>";
+		?>
 	</div>
 </div>

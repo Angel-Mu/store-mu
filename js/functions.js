@@ -54,7 +54,9 @@ function detallesCat(id){
 	}
 	ajax.send(null);
 }
-
+function calcular(cant, prec){
+	document.getElementById('total').value=prec*cant;
+}
 function abrirFormulario(){
 	c = document.getElementById('resultado');
 	ajax = crearAjax();
@@ -67,24 +69,20 @@ function abrirFormulario(){
 	ajax.send(null);
 }
 
-function insertar(){
-	
+function agregarCarrito(id){
+	total=document.getElementById('total').value;
+	cant=document.getElementById('cant').value;
 	c = document.getElementById('resultado');
-	ma=document.getElementById('marca').value;
-	mo=document.getElementById('modelo').value;
-	s=document.getElementById('serie').value;
-	ca=document.getElementById('cantidad').value;
-	p=document.getElementById('precio').value;
-	d=document.getElementById('descripcion').value;
+	alert(id);
 	ajax = crearAjax();
-	ajax.open("POST","insertar.php");
+	ajax.open("POST","addToCart.php?id_celular="+id+"&tot="+total+"&cant="+cant);
 	ajax.onreadystatechange=function(){
 		if(ajax.readyState==4){
 			c.innerHTML=ajax.responseText;
 		}
 	}
 	ajax.setRequestHeader("Content-Type","application/x-www-form-urlencoded");
-	ajax.send("ma="+ma+"&mo="+mo+"&s="+s+"&ca="+ca+"&p="+p+"&d="+d);
+	ajax.send("id_celular="+id+"&tot="+total+"&cant="+cant);
 }
 
 
