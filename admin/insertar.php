@@ -30,10 +30,11 @@ $rutadestBD3=$rutaDB.$nombrearchivo3;
 move_uploaded_file($rutatemporal3, $rutadestino3);
 
 $consulta = mysql_query("insert into celular (marca,modelo,serie,stock,precio,descripcion,imagen,imagen2,imagen3) values ('$ma','$mo','$s','$ca','$p','$d','".$rutadestBD1."','".$rutadestBD2."','".$rutadestBD3."')");
+
 if($consulta){
-    echo "<script>alert(\"Se ha registrado $ma $mo con éxito.\"); location.href=\"admin_CRUD.php\";</script>";
+    echo "<script>alert(\"Se ha registrado $ma $mo con exito.\"); location.href=\"admin_CRUD.php\";</script>";
 }else{
-    echo "<script>alert(\"No se ha registrado $ma $mo con éxito.\"); location.href=\"admin_CRUD.php\";</script>";
+    echo "<script>alert(\"No se ha registrado $ma $mo con exito.\"); location.href=\"admin_CRUD.php\";</script>";
 }
 ?>
  
