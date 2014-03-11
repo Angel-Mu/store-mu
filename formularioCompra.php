@@ -43,7 +43,7 @@
 					<h3>Dirección</h3>
 					<input type="text" class="form-control" name="dir"><br>
 					<h3>Total a Pagar</h3>
-					<input type="text" class="form-control" name="pagar" value="'.$pago.'" disabled="disabled"><br>
+					<input type="text" class="form-control" name="cant_pagar" value="'.$pago.'"><br>
 					<input type="text" class="form-control" name="cart" value="'.$_COOKIE['carroCompra'].'" style="display:none;"><br>
 				</div>
 				<br><input type="submit" class="btn btn-default" value="Registrar">
