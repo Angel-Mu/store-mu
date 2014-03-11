@@ -4,6 +4,10 @@
 	$query="select * from celular  where id_celular='$id'";
 	$celTable=mysql_query($query);
 	$datosCel=mysql_fetch_array($celTable);
+	$consCarrito = mysql_query("select * from carrito order by id_carrito DESC;");
+    $car=mysql_fetch_array($consCarrito);
+    $newCar=$car['id_carrito']+1;
+    setcookie("carroCompra", $newCar, time()+3600);
 ?>
 <div class="row ">
 	<div class="col-xs-2"></div>

@@ -1,5 +1,9 @@
 <?
   include("controller/funciones.php");
+  $consCarrito = mysql_query("select * from carrito order by id_carrito DESC;");
+  $car=mysql_fetch_array($consCarrito);
+  $newCar=$car['id_carrito']+1;
+  setcookie("carroCompra", $newCar, time()+3600);
 ?>
 <!DOCTYPE html>
 <html lang="en">
@@ -98,7 +102,7 @@
                 }
                   echo '</table>';
                   echo '<a class="btn btn-md btn-primary" href="#" onclick="comprar('.$list['id_carrito'].');"><span class="glyphicon glyphicon-usd">&nbspComprar</span></a>';
-                  echo '<a class="btn btn-md btn-primary" href="#" onclick="vaciar('.$list['id_carrito'].');"><span class="glyphicon glyphicon-trash">&nbspVaciar</span></a>';
+                  echo '<a class="btn btn-md btn-primary" href="#" onclick="delCart();"><span class="glyphicon glyphicon-trash">&nbspVaciar</span></a>';
                 }else{
                   echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button><strong>No hay elementos en el carrito</strong> Puede ser que haya expirado su carrito o que no haya cargado ningún artículo</div>";
                 }
