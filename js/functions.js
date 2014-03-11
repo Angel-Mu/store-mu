@@ -29,9 +29,10 @@ function buscar(){
 	ajax.send(null);
 }
 function delItem(contador){
-	c = document.getElementById('resultado');
 	ajax = crearAjax();
 	ajax.open("GET","removeItem.php?cont="+contador);
+	window.location.href = 'carrito.php';
+	c = document.getElementById('resultado');
 	ajax.onreadystatechange=function(){
 		if(ajax.readyState==4){
 			c.innerHTML=ajax.responseText;

@@ -9,6 +9,6 @@
         echo "<div class='alert alert-success alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>Agregado al carrito con exito</div>";
     }else{
         echo "<div class='alert alert-danger alert-dismissable'><button type='button' class='close' data-dismiss='alert' aria-hidden='true'>&times;</button>'>Ocurrió un <strong>ERROR</strong></div>";;
-    }  
+    }
 ?>
  

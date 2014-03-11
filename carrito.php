@@ -66,7 +66,7 @@
         <div class="col-lg-2">
           
         </div>
-        <div class="col-lg-8">
+        <div class="col-lg-8" id="resultadosCarrito">
           <?
               if($_COOKIE['carroCompra']!=null){
                 $consulta = mysql_query("SELECT * FROM carrito inner join celular on celular.id_celular=carrito.id_celular where id_carrito=".$_COOKIE['carroCompra']);
