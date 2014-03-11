@@ -1,4 +1,5 @@
 <?php
+	setcookie("carroCompra", $newCar, time()+3600);
 	header("Content-Type: text/html;charset=utf-8");
  	include ("controller/conexion.php");
 	$insertUser = mysql_query("insert into comprador(nombre,ap_pat,ap_mat,telefono,correo,direccion) values('$nombre','$ap1','$ap2',$tel,'$email','$dir');");
