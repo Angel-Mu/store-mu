@@ -1,10 +1,12 @@
 <?
     session_start();
     include("controller/conexion.php");
+    if($_COOKIE['carroCompra']==null){
     $consCarrito = mysql_query("select * from carrito order by id_carrito DESC;");
     $car=mysql_fetch_array($consCarrito);
     $newCar=$car['id_carrito']+1;
     setcookie("carroCompra", $newCar, time()+3600);
+  }
 ?>
 <!DOCTYPE html>
 <html lang="en">
