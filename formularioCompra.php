@@ -30,20 +30,20 @@
   		echo '</table>';
   		echo '<form action="comprar.php" method="post" enctype="multipart/form-data">
 				<div class="input-group">
-					<h3>Nombre</h3>
-					<input type="text" class="form-control" name="nombre"><br>
-					<h3>Apellido Paterno</h3>
-					<input type="text" class="form-control" name="ap1"><br>
+					<h3>Nombre*</h3>
+					<input type="text" class="form-control" name="nombre" required><br>
+					<h3>Apellido Paterno*</h3>
+					<input type="text" class="form-control" name="ap1" required><br>
 					<h3>Apellido Materno</h3>
 					<input type="text" class="form-control" name="ap2"><br>
-					<h3>Telefono</h3>
-					<input type="number" class="form-control" name="tel"><br>
-					<h3>Correo</h3>
-					<input type="email" class="form-control" name="email"><br>
-					<h3>Dirección</h3>
-					<input type="text" class="form-control" name="dir"><br>
-					<h3>Total a Pagar</h3>
-					<input type="text" class="form-control" name="cant_pagar" value="'.$pago.'"><br>
+					<h3>Telefono*</h3>
+					<input type="number" class="form-control" name="tel" required><br>
+					<h3>Correo*</h3>
+					<input type="email" class="form-control" name="email" required><br>
+					<h3>Dirección*</h3>
+					<input type="text" class="form-control" name="dir" required><br>
+					<h3>Total a Pagar*</h3>
+					<input type="text" class="form-control" name="cant_pagar" value="'.$pago.'" disabled="disabled"><br>
 					<input type="text" class="form-control" name="cart" value="'.$_COOKIE['carroCompra'].'" style="display:none;"><br>
 				</div>
 				<br><input type="submit" class="btn btn-default" value="Registrar">
