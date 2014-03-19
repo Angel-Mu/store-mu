@@ -57,10 +57,10 @@ if (verificar_usuario()){?>
             </div>
             <div class="navbar-collapse collapse">
               <ul class="nav navbar-nav">
-                <li class="active"><a href="admin_CRUD.php">CRUD</a></li>
+                <li><a href="admin_CRUD.php">CRUD</a></li>
                 <li><a href="salir.php">Cerrar Sesión</a></li>
                 <li><a href="reporte_fpdf.php">Reportes</a></li>
-                <li><a href="bitacora.php">Ver Bitácora</a></li>
+                <li class="active"><a href="bitacora.php">Ver Bitácora</a></li>
               </ul>
               <form class="navbar-form navbar-right">
                 <div class="form-group">
@@ -80,10 +80,10 @@ if (verificar_usuario()){?>
       </div>
     </div>
     <div id="tabla" align="center">
-    <div id="resultado"><h3>Bienvenido Administrador</h3></div>
-      <br><br><br><br>
-      <a href="#" onclick="abrirFormulario();">Nuevo</a>
-      <br><br>
+      
+      <div id="resultado">
+      
+      </div>
     </div>
       <!-- FOOTER -->
       <footer>

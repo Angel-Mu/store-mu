@@ -1,0 +1,5 @@
+Fecha		Hora		Tablas	Operación	Usuario
+19/Mar/2014	8:04:01 AM	celular	Actualizar	Angel_Mu68
+19/Mar/2014	8:34:17 AM	celular	Actualizar	Angel_Mu68
+19/Mar/2014	8:41:02 AM	celular	Actualizar	Angel_Mu68
+19/Mar/2014	1:19:16 PM	celular	Actualizar	Angel_Mu68
