@@ -1,6 +1,7 @@
 <?
 header("Content-Type: text/html;charset=utf-8");
 include('funciones.php');
+include("manageFile.php");
 //uso de la funcion verificar_usuario()
 if (verificar_usuario()){
 	include ("../controller/conexion.php");
@@ -13,6 +14,7 @@ if (verificar_usuario()){
   	$descripcion = $_POST['d'];
  	$consulta = mysql_query("update celular set marca='$ma', modelo='$mo',serie='$s',stock='$ca',precio='$p',descripcion='$d' where id_celular='$id'");
  	if($consulta){
+    registrarBitacora("celular","Actualizar",$usuario);
  		?>
  		<div class="alert alert-success">Los datos se actualizaron correctamente</div>
  		<?

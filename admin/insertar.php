@@ -1,6 +1,7 @@
 <?php
 header("Content-Type: text/html;charset=utf-8");
 include('funciones.php');
+include("manageFile.php");
 //uso de la funcion verificar_usuario()
 if (verificar_usuario()){
  	include ("../controller/conexion.php");
@@ -36,6 +37,7 @@ if (verificar_usuario()){
 	}
 	$consulta = mysql_query("insert into celular (marca,modelo,serie,stock,precio,descripcion,imagen,imagen2,imagen3) values ('$ma','$mo','$s','$ca','$p','$d','".$rutadestBD1."','".$rutadestBD2."','".$rutadestBD3."')");
 	if($consulta){
+		registrarBitacora("celular","Insertar",$usuario);
     	echo "<script>alert(\"Se ha registrado $ma $mo con exito.\"); location.href=\"admin_CRUD.php\";</script>";
 	}else{
     	echo "<script>alert(\"No se ha registrado $ma $mo con exito.\"); location.href=\"admin_CRUD.php\";</script>";
