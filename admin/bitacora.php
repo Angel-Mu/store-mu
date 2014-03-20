@@ -1,25 +1,27 @@
 <?
 header("Content-Type: text/html;charset=utf-8");
 include('funciones.php');
+include('manageFile.php');
 //uso de la funcion verificar_usuario()
-if (verificar_usuario()){?>
+        $cadena=cadenaJson();
+        //echo $cadena;
+
+  if (verificar_usuario()){?>
 <!DOCTYPE html>
 <html lang="en">
   <head>
     <script type="text/javascript" src="../js/ajax.js"></script>
     <script type="text/javascript" src="../js/multiplefiles.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.0/jquery.min.js"></script>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
     <meta name="author" content="">
     <link rel="shortcut icon" href="../../assets/ico/favicon.ico">
-
     <title>EP2</title>
-
     <!-- Bootstrap core CSS -->
     <link href="../dist/css/bootstrap.min.css" rel="stylesheet">
-
     <!-- Just for debugging purposes. Don't actually copy this line! -->
     <!--[if lt IE 9]><script src="../../assets/js/ie8-responsive-file-warning.js"></script><![endif]-->
 
@@ -36,12 +38,14 @@ if (verificar_usuario()){?>
         margin-top: 10%;
         /*background-color: #A4A4A4;*/
         border-radius: 3px;
-}
+      }
     </style>
+    
   </head>
 <!-- NAVBAR
 ================================================== -->
   <body>
+     
     <div class="navbar-wrapper">
       <div class="container">
         <div class="navbar navbar-inverse navbar-static-top" role="navigation">
@@ -79,12 +83,34 @@ if (verificar_usuario()){?>
         </div>
       </div>
     </div>
+    
     <div id="tabla" align="center">
-      
+
       <div id="resultado">
-      
+        <p id="resulPar"></p>
       </div>
     </div>
+    <script>
+
+              registro = <?echo json_encode($cadena);?>;
+            //[{"fecha":"19/Mar/2014","hora":"8:04:01 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"8:34:17 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"8:41:02 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"1:19:16 PM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "}];
+              <?
+              $aux=json_encode($cadena);
+              function escapeJavaScriptText ($aux) 
+              { 
+                  return str_replace("\n", '\n', str_replace('"', '\"', addcslashes(str_replace("\r", '', (string)$aux), "\0..\37'\\"))); 
+              } 
+                $jsonCad=escapeJavaScriptText();
+              ?>
+              reg=<?echo $jsonCad;?>;
+              document.getElementById("resulPar").innerHTML=reg.fecha[0]+ " " + reg[0].hora;
+      
+     /* function alerta(){
+        var str=<?echo $cadena;?>;
+        json= eval("("+str+")");
+        alert("SII");
+      }*/
+    </script>
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
