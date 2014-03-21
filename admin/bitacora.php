@@ -3,8 +3,7 @@ header("Content-Type: text/html;charset=utf-8");
 include('funciones.php');
 include('manageFile.php');
 //uso de la funcion verificar_usuario()
-        $cadena=cadenaJson();
-        echo $cadena;
+
 
   if (verificar_usuario()){?>
 <!DOCTYPE html>
@@ -85,32 +84,18 @@ include('manageFile.php');
     </div>
     
     <div id="tabla" align="center">
-
+        <table class="table table-bordered" id="tablaBitacora">
+          <tr>
+            <td>Fecha</td>
+            <td>Hora</td>
+            <td>Operacion</td>
+            <td>Tablas</td>
+            <td>Usuario</td>
+          </tr>
+        </table>
       <div id="resultado">
-        <p id="resulPar"></p>
       </div>
     </div>
-       <script>
-
-              registro = <?echo json_encode($cadena);?>;
-            //[{"fecha":"19/Mar/2014","hora":"8:04:01 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"8:34:17 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"8:41:02 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"1:19:16 PM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "}];
-
-              reg= registro.replace('\\'," ");
-              alert(reg+ reg[0].fecha);
-              //obj = eval(reg);
-              for(i=0;i<obj.length;i++){
-                document.getElementById('resulPar').innerHTML+=obj[i].fecha;
-                document.getElementById('jsonobj').innerHTML+=bj[i].hora;
-              };
-              //document.getElementById("resulPar").innerHTML=reg[0].fecha+ " " + reg[0].hora;
-      
-     /* function alerta(){
-        var str=<?echo $cadena;?>;
-        json= eval("("+str+")");
-        alert("SII");
-      }*/
-    </script>
-
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
@@ -128,6 +113,7 @@ include('manageFile.php');
   </body>
 </html>
 <?    
+        cadenaJson();
 } else {
   //si el usuario no es verificado volvera al formulario de ingreso
   ?><head><meta charset="utf-8"><?

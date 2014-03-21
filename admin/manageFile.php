@@ -28,6 +28,11 @@
 
 	function cadenaJson(){
 		$fp=fopen("bitacora.txt","r");
+		$fechas=array();
+		$horas=array();
+		$operaciones=array();
+		$tablas=array();
+		$usuarios=array();
 	    if(!$fp){
 	      echo "No se abrir el archivo";
 	    }else{
@@ -40,49 +45,61 @@
 	        		continue;
 	        	}
 	        	if(strlen($linea)!=0){
-	        		/*$splitLine=explode("\t",$linea);
-	        		$registro["fecha"][$i-1]=$splitLine[0];
-	        		$registro["hora"][$i-1]=$splitLine[1];
-	        		$registro["tablas"][$i-1]=$splitLine[2];
-	        		$registro["operacion"][$i-1]=$splitLine[3];
-	        		$registro["usuario"][$i-1]=$splitLine[4];*/
-	        		if($i>2){
-	        			$cad=$cad.",{";
-	        		}
-		        	$splitLine=explode("\t",$linea);
-			        $cad=$cad."\"fecha\":\"".$splitLine[0]."\",";
-			        $cad=$cad."\"hora\":\"".$splitLine[1]."\",";
-			        $cad=$cad."\"tablas\":\"".$splitLine[2]."\",";
-			        $cad=$cad."\"operacion\":\"".$splitLine[3]."\",";
-			        $cad=$cad."\"usuario\":\"".$splitLine[4]."\"";
-			        $cad=$cad."}";
-
-	        	}else{
-	        		continue;
-	       		}
-	        /*for($j=0;$j<count($splitLine);$j++){
-	        	if(strlen($splitLine[$j])==0){
-	        		continue;
+	        		$splitLine=explode("\t",$linea);
+		        	$fechas[$i-2]=$splitLine[0];
+	        		$horas[$i-2]=$splitLine[1];
+	        		$tablas[$i-2]=$splitLine[2];
+	        		$operaciones[$i-2]=$splitLine[3];
+	        		$usuarios[$i-2]=substr($splitLine[4],0,-4);
 	        	}
-	        	echo $splitLine[$j];
-
-	        }*/
 	      	}
-	      	$cad=$cad."]";
-			if($i==1){
-				echo "<script> alert('No hay registros en Bitácora'); </script>";
-			}
+	      	for($i=0;$i<count($horas);$i++) {
+	      		# code...
+	      		echo $horas[$i]."   ";
+	      	}
+	      	$json = array(
+					    'fecha' => $fechas,
+					    'hora' => $horas,
+					    'operacion' => $operaciones,
+					    'tablas' => $tablas,
+					    'usuario' => $usuarios
+					);
+	      	$str_butacorajson = file_get_contents("datos_out.json");
+			$objJson = json_decode($str_butacorajson,true);
+			echo '
+	      		<script>
+	      			var tab=document.getElementById("tablaBitacora"); 
+			    </script>
+	      		';
+				for($i=0;$i<count($horas);$i++) {
+	      		echo '
+	      		<script>
+	      			var tr=document.createElement("tr"); 
+					var td=document.createElement("td"); 
+			    	td.innerHTML = "'.$objJson["fecha"][$i].'";
+			    	tr.appendChild(td); 
+			    	var td=document.createElement("td"); 
+			    	td.innerHTML = "'.$objJson["hora"][$i].'";
+			    	tr.appendChild(td); 
+			    	var td=document.createElement("td"); 
+			    	td.innerHTML = "'.$objJson["tablas"][$i].'";
+			    	tr.appendChild(td); 
+			    	var td=document.createElement("td"); 
+			    	td.innerHTML = "'.$objJson["operacion"][$i].'";
+			    	tr.appendChild(td); 
+			    	var td=document.createElement("td"); 
+			    	td.innerHTML = "'.$objJson["usuario"][$i].'";
+			    	tr.appendChild(td); 
+					tab.appendChild(tr);
+			    </script>
+	      		';
+	      	}
+	      	
+			$coded=json_encode($json);
 			fclose($fp);
 			$fh = fopen("datos_out.json", 'w') or die("Error al abrir fichero de salida");
-			fwrite($fh, json_encode($cad));
+			fwrite($fh, $coded);
 			fclose($fh);
-			return $cad;
 	  	}
-	}
-	function abrirJson(){
-		$str_datos = file_get_contents("datos_out.json");
-		$datos = json_decode($str_datos,true);
-		 
-		echo "Aficiones del jefe: ".$datos[0][2]."n";
 	}
 ?>
