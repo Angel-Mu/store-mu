@@ -4,7 +4,7 @@ include('funciones.php');
 include('manageFile.php');
 //uso de la funcion verificar_usuario()
         $cadena=cadenaJson();
-        //echo $cadena;
+        echo $cadena;
 
   if (verificar_usuario()){?>
 <!DOCTYPE html>
@@ -90,20 +90,19 @@ include('manageFile.php');
         <p id="resulPar"></p>
       </div>
     </div>
-    <script>
+       <script>
 
               registro = <?echo json_encode($cadena);?>;
             //[{"fecha":"19/Mar/2014","hora":"8:04:01 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"8:34:17 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"8:41:02 AM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "},{"fecha":"19/Mar/2014","hora":"1:19:16 PM","tablas":"celular","operacion":"Actualizar","usuario":"Angel_Mu68 "}];
-              <?
-              $aux=json_encode($cadena);
-              function escapeJavaScriptText ($aux) 
-              { 
-                  return str_replace("\n", '\n', str_replace('"', '\"', addcslashes(str_replace("\r", '', (string)$aux), "\0..\37'\\"))); 
-              } 
-                $jsonCad=escapeJavaScriptText();
-              ?>
-              reg=<?echo $jsonCad;?>;
-              document.getElementById("resulPar").innerHTML=reg.fecha[0]+ " " + reg[0].hora;
+
+              reg= registro.replace('\\'," ");
+              alert(reg+ reg[0].fecha);
+              //obj = eval(reg);
+              for(i=0;i<obj.length;i++){
+                document.getElementById('resulPar').innerHTML+=obj[i].fecha;
+                document.getElementById('jsonobj').innerHTML+=bj[i].hora;
+              };
+              //document.getElementById("resulPar").innerHTML=reg[0].fecha+ " " + reg[0].hora;
       
      /* function alerta(){
         var str=<?echo $cadena;?>;
@@ -111,6 +110,7 @@ include('manageFile.php');
         alert("SII");
       }*/
     </script>
+
       <!-- FOOTER -->
       <footer>
         <p class="pull-right"><a href="#">Back to top</a></p>
